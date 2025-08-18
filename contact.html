@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Fingard Partners</title>
+     <link rel="icon" type="image/png" href="https://i.postimg.cc/507Zf8yt/logo.png">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+                <a href="index.html" class="nav-logo">
+        <img src="https://i.postimg.cc/507Zf8yt/logo.png" alt="Fingard Partners Logo" style="height: 40px; width: auto;">
+        <span>Fingard Partners</span>
+    </a>
+    
+            <div class="nav-menu" id="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About Us</a>
+                <a href="services.html" class="nav-link">Services</a>
+                <a href="resources.html" class="nav-link">Resources</a>
+                <a href="contact.html" class="nav-link active">Contact</a>
+                <a href="payment.html" class="nav-link pay-btn">Pay Online</a>
+            </div>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Contact Us</h1>
+            <p>Get in touch with our expert team for professional financial solutions</p>
+        </div>
+    </section>
+
+    <!-- Contact Content -->
+    <section class="contact-content">
+        <div class="container">
+            <div class="contact-grid">
+                <!-- Contact Information -->
+                <div class="contact-info-section">
+                    <h2>Get in Touch</h2>
+                    <p>We're here to help you with all your financial and compliance needs. Reach out to us using any of
+                        the methods below.</p>
+
+                    <div class="contact-methods">
+                        <div class="contact-method">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>Email Us</h4>
+                                <a href="mailto:fingardpartners@gmail.com">fingardpartners@gmail.com</a>
+                            </div>
+                        </div>
+
+                        <div class="contact-method">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>Call Us</h4>
+                                <a href="tel:+919116641804">+91 9116641804</a> / <a href="tel:+919116033573">+91
+                                    9116033573</a>
+                            </div>
+                        </div>
+
+                        <div class="contact-method">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>Visit Us</h4>
+                                <p>Plot No: 3-B, Sangram Colony Gate No. 2<br>
+                                    Near Mahavir School, Mahavir Marg<br>
+                                    C-Scheme, Jaipur-302001<br>
+                                    Rajasthan, India</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-method">
+                            <div class="contact-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>Business Hours</h4>
+                                <p>Monday - Friday: 9:00 AM - 6:00 PM<br>
+                                    Saturday: 9:00 AM - 2:00 PM<br>
+                                    Sunday: Closed</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <!-- Contact Form -->
+                <div class="contact-form-section">
+                    <h2>Send us a Message</h2>
+                    <form id="contact-form" class="contact-form" action="https://script.google.com/macros/s/AKfycbxq-4qVkHRBH04bBWtzp1ZjNczzra_2HwiMz0B27JED1w4bBW3FgUBPQd1Dwdr7Xwpp/exec" method="post">
+
+                        <!-- Row 1 -->
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Full Name *</label>
+                                <input type="text" id="name" name="name" required>
+                                <span class="error-message" id="name-error"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address *</label>
+                                <input type="email" id="email" name="email" required>
+                                <span class="error-message" id="email-error"></span>
+                            </div>
+                        </div>
+
+                        <!-- Row 2 -->
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="phone">Phone Number *</label>
+                                <input type="tel" id="phone" name="phone" required>
+                                <span class="error-message" id="phone-error"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="subject">Subject</label>
+                                <select id="subject" name="subject">
+                                    <option value="">Select a subject</option>
+                                    <option value="income-tax-return">Income Tax Return</option>
+                                    <option value="tax-consultation">Tax Consultation</option>
+                                    <option value="financial-planning">Tax Planning</option>
+                                    <option value="business-advisory">Business Advisory</option>
+                                    <option value="compliance-services">Compliance Services</option>
+                                    <option value="accounting">Accounting & Bookkeeping</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Row 3 -->
+                        <div class="form-group">
+                            <label for="message">Message *</label>
+                            <textarea id="message" name="message" rows="3" required
+                                placeholder="Please describe your requirements in detail..."></textarea>
+                            <span class="error-message" id="message-error"></span>
+                        </div>
+
+                        <!-- Button -->
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+
+                        <!-- Success Message -->
+                        <div id="form-success" class="success-message" style="display: none;">
+                            ✅ Thank you for your message! We'll get back to you soon.
+                        </div>
+
+                        <!-- Error Message -->
+                        <div id="form-error" class="error-message" style="display: none; color: red;">
+                            ❌ Something went wrong. Please try again later.
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="map-section">
+        <div class="container">
+            <h2 class="section-title">Find Us on Map</h2>
+            <div class="map-container">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3558.093776!2d75.8108333!3d26.9097556!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjbCsDU0JzM1LjIiTiA3NcKwNDgnMzkuMSJF!5e0!3m2!1sen!2sin!4v1640000000000!5m2!1sen!2sin"
+                    width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h4>What services do you offer?</h4>
+                    <p>We offer comprehensive financial services including tax consultation, financial planning,
+                        business advisory, compliance services, accounting, and legal documentation support.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>How can I schedule a consultation?</h4>
+                    <p>You can schedule a consultation by calling us, sending an email, or filling out the contact form
+                        on this page. We'll get back to you within 24 hours to arrange a meeting.</p>
+                </div>
+                <!-- <div class="faq-item">
+                    <h4>Do you serve clients outside Jaipur?</h4>
+                    <p>Yes, we serve clients across Rajasthan and other states in India. We can provide services both
+                        in-person and through digital consultations.</p>
+                </div> -->
+                <div class="faq-item">
+                    <h4>What are your consultation fees?</h4>
+                    <p>Our consultation fees vary based on the service required. Please contact us for detailed pricing
+                        information tailored to your specific needs.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="https://i.postimg.cc/507Zf8yt/logo.png" alt="Fingard Partners Logo"
+                            style="height: 40px; width: auto;">
+                        <span>Fingard Partners</span>
+                    </div>
+                    <p>Your trusted partner in finance & compliance. Professional solutions for your financial success.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://x.com/fingardpartners" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.facebook.com/fingardpartners" target="_blank"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/fingardpartners/" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.youtube.com/@FingardPartners" target="_blank"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="resources.html">Resources</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="payment.html">Pay Online</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <div class="contact-info">
+                        <p><i class="fas fa-envelope"></i> fingardpartners@gmail.com</p>
+                        <p><i class="fas fa-phone"></i> +91 9116641804 / +91 9116033573</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Plot No: 3-B, Sangram Colony Gate No. 2, Near Mahavir
+                            School, Mahavir Marg, C-Scheme, Jaipur-302001, Rajasthan, India</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Fingard Partners. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button id="scroll-to-top" class="scroll-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+    <script src="script.js" defer></script>
+</body>
+
+</html>

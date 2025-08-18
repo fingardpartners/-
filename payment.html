@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Payment - Fingard Partners</title>
+     <link rel="icon" type="image/png" href="https://i.postimg.cc/507Zf8yt/logo.png">
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+      <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+        <img src="https://i.postimg.cc/507Zf8yt/logo.png" alt="Fingard Partners Logo" style="height: 40px; width: auto;">
+        <span>Fingard Partners</span>
+    </a>
+    
+        <div class="nav-menu" id="nav-menu">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="about.html" class="nav-link">About Us</a>
+          <a href="services.html" class="nav-link">Services</a>
+          <a href="resources.html" class="nav-link">Resources</a>
+          <a href="contact.html" class="nav-link">Contact</a>
+          <a href="payment.html" class="nav-link pay-btn active">Pay Online</a>
+        </div>
+        <div class="hamburger" id="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+      <div class="container">
+        <h1>Make a Payment</h1>
+        <p>Secure online payment for our professional services</p>
+      </div>
+    </section>
+
+    <!-- Payment Content -->
+    <section class="payment-content">
+      <div class="container">
+        <div class="payment-grid">
+          <!-- Payment Form -->
+          <div class="payment-form-section">
+            <div class="payment-card">
+              <h2>Payment Details</h2>
+              <form id="payment-form" class="payment-form">
+                <div class="form-group">
+                  <label for="service-type">Service Type *</label>
+                  <select id="service-type" name="service-type" required>
+                    <option value="">Select a service</option>
+
+                    <!-- ITR Filing Packages -->
+                    <option value="itr-standard">ITR Standard</option>
+                    <option value="itr-multiple-form-16">
+                      ITR Multiple Form 16
+                    </option>
+                    <option value="itr-business-income">
+                      ITR Business Income
+                    </option>
+                    <option value="itr-capital-gain">ITR Capital Gain</option>
+                    <option value="itr-nri">ITR NRI</option>
+                    <option value="itr-foreign">ITR Foreign</option>
+
+                    <!-- Tax Planning Packages -->
+                    <option value="tax-planning-basic">
+                      Tax Planning Basic
+                    </option>
+                    <option value="tax-planning-standard">
+                      Tax Planning Standard
+                    </option>
+                    <option value="tax-planning-premium">
+                      Tax Planning Premium
+                    </option>
+
+                    <!-- Tax Consultation -->
+                    <option value="first-consultation-call">
+                      First Consultation Call
+                    </option>
+
+                    <!-- Custom Option -->
+                    <option value="custom">Custom Amount</option>
+                  </select>
+                </div>
+
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="client-name">Client Name *</label>
+                    <input
+                      type="text"
+                      id="client-name"
+                      name="client-name"
+                      required
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="client-email">Email Address *</label>
+                    <input
+                      type="email"
+                      id="client-email"
+                      name="client-email"
+                      required
+                    />
+                  </div>
+                </div>
+
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="client-phone">Phone Number *</label>
+                    <input
+                      type="tel"
+                      id="client-phone"
+                      name="client-phone"
+                      required
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="amount">Amount (₹) *</label>
+                    <input
+                      type="number"
+                      id="amount"
+                      name="amount"
+                      min="1"
+                      required
+                      readonly
+                    />
+                  </div>
+                </div>
+                <div class="form-group" style="display: flex; gap: 10px">
+                  <input
+                    type="text"
+                    id="couponCode"
+                    name="couponCode"
+                    placeholder="Enter Coupon Code"
+                    style="flex: 1"
+                  />
+                  <button
+                    type="button"
+                    id="applyCouponBtn"
+                    style="
+                      background: #002147;
+                      color: #fff;
+                      border: none;
+                      padding: 8px 15px;
+                      border-radius: 5px;
+                      cursor: pointer;
+                    "
+                  >
+                    Apply
+                  </button>
+                </div>
+                <div class="summary-row discount" style="display: none">
+                  <span>Discount:</span>
+                  <span id="discount-amount">₹0</span>
+                </div>
+
+                <div class="form-group">
+                  <label for="description">Description/Notes</label>
+                  <textarea
+                    id="description"
+                    name="description"
+                    rows="3"
+                    placeholder="Optional: Add any notes about the payment"
+                  ></textarea>
+                </div>
+
+                <div class="payment-summary">
+                  <h3>Payment Summary</h3>
+                  <div class="summary-row">
+                    <span>Service Amount:</span>
+                    <span id="service-amount">₹0</span>
+                  </div>
+                  <div class="summary-row total">
+                    <span>Total Amount:</span>
+                    <span id="total-amount">₹0</span>
+                  </div>
+                </div>
+
+                <button
+                  type="submit"
+                  class="btn btn-primary btn-pay"
+                  id="pay-button"
+                >
+                  <i class="fas fa-credit-card"></i> Pay Securely with Razorpay
+                </button>
+              </form>
+            </div>
+          </div>
+          <!-- Right Column: Payment Info & What Happens After Payment -->
+<div class="payment-info-section">
+ <!-- Right Column -->
+<div class="payment-info-section">
+  <!-- Secure Payment Card -->
+  <div class="info-card">
+    <h3>Secure Payment</h3>
+    <div class="info-item">
+      <i class="fas fa-lock"></i>
+      <p>SSL Encrypted transactions</p>
+    </div>
+    <div class="info-item">
+      <i class="fas fa-credit-card"></i>
+      <p>Pay via Cards, UPI & Net Banking</p>
+    </div>
+    <div class="info-item">
+      <i class="fas fa-receipt"></i>
+      <p>Instant payment receipt</p>
+    </div>
+    <div class="info-item">
+      <i class="fas fa-shield-alt"></i>
+      <p>100% safe & reliable</p>
+    </div>
+  </div>
+
+  <!-- After Payment Card -->
+  <div class="info-card">
+    <h3>What happens after payment?</h3>
+    <div class="info-item">
+      <i class="fas fa-clock"></i>
+      <p>Team contacts you within 2 hour</p>
+    </div>
+    <div class="info-item">
+      <i class="fas fa-file-alt"></i>
+      <p>Guidance for required documents/details</p>
+    </div>
+    <div class="info-item">
+      <i class="fas fa-user-check"></i>
+      <p>Expert verification by eCA</p>
+    </div>
+    <div class="info-item">
+      <i class="fas fa-cogs"></i>
+      <p>Service execution begins (ITR Filing / Tax Planning / Consultation)</p>
+    </div>
+    <div class="info-item">
+      <i class="fas fa-check-circle"></i>
+      <p>Review & confirmation from your side</p>
+    </div>
+  </div>
+
+  <!-- Contact Card -->
+  <div class="info-card contact-card">
+    <h3><i class="fas fa-headset"></i> Need Help?</h3>
+    <div class="info-item">
+      <i class="fas fa-phone"></i>
+      <p>+91 9116641804 / +91 9116033573</p>
+    </div>
+    <div class="info-item">
+      <i class="fas fa-envelope"></i>
+      <p>fingardpartners@gmail.com</p>
+    </div>
+  </div>
+</div>
+
+    </section>
+
+    <!-- Payment Methods -->
+    <section class="payment-methods">
+      <div class="container">
+        <h2 class="section-title">Accepted Payment Methods</h2>
+        <div class="payment-methods-grid">
+          <div class="payment-method">
+            <i class="fab fa-cc-visa"></i>
+            <span>Visa</span>
+          </div>
+          <div class="payment-method">
+            <i class="fab fa-cc-mastercard"></i>
+            <span>Mastercard</span>
+          </div>
+          <div class="payment-method">
+            <i class="fas fa-university"></i>
+            <span>Net Banking</span>
+          </div>
+          <div class="payment-method">
+            <i class="fas fa-mobile-alt"></i>
+            <span>UPI</span>
+          </div>
+          <div class="payment-method">
+            <i class="fas fa-wallet"></i>
+            <span>Digital Wallets</span>
+          </div>
+          <div class="payment-method">
+            <i class="fab fa-cc-amex"></i>
+            <span>American Express</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <div class="footer-logo">
+              <img
+                src="https://i.postimg.cc/507Zf8yt/logo.png"
+                alt="Fingard Partners Logo"
+                style="height: 40px; width: auto"
+              />
+              <span>Fingard Partners</span>
+            </div>
+            <p>
+              Your trusted partner in finance & compliance. Professional
+              solutions for your financial success.
+            </p>
+            <div class="social-links">
+              <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+              <a href="https://x.com/fingardpartners" target="_blank"><i class="fab fa-twitter"></i></a>
+              <a href="https://www.facebook.com/fingardpartners" target="_blank"><i class="fab fa-facebook"></i></a>
+              <a href="https://www.instagram.com/fingardpartners/" target="_blank"><i class="fab fa-instagram"></i></a>
+              <a href="https://www.youtube.com/@FingardPartners" target="_blank"><i class="fab fa-youtube"></i></a>
+            </div>
+          </div>
+          <div class="footer-section">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="services.html">Services</a></li>
+              <li><a href="resources.html">Resources</a></li>
+              <li><a href="contact.html">Contact</a></li>
+              <li><a href="payment.html">Pay Online</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h4>Contact Info</h4>
+            <div class="contact-info">
+              <p><i class="fas fa-envelope"></i> fingardpartners@gmail.com</p>
+              <p>
+                <i class="fas fa-phone"></i> +91 9116641804 / +91 9116033573
+              </p>
+              <p>
+                <i class="fas fa-map-marker-alt"></i> Plot No: 3-B, Sangram
+                Colony Gate No. 2, Near Mahavir School, Mahavir Marg, C-Scheme,
+                Jaipur-302001, Rajasthan, India
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2025 Fingard Partners. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button id="scroll-to-top" class="scroll-to-top">
+      <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="script.js"></script>
+  </body>
+</html>
